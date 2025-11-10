@@ -5,6 +5,18 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Drawer(
+      backgroundColor: const Color(0xffDBDBDB),
+      child: Column(
+        children: <Widget>[
+          const DrawerHeader(
+            child: Icon(
+              Icons.favorite,
+              size: 50 ,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
