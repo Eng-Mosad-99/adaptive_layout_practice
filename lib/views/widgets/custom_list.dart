@@ -9,15 +9,14 @@ class CustomList extends StatelessWidget {
     return SizedBox(
       height: 100,
       child: ListView.builder(
-       
-        scrollDirection: Axis.horizontal,      
+        scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return const AspectRatio(
-            aspectRatio: 1,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5),
-              child: CustomItem(),
-            ));
+              aspectRatio: 1,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5),
+                child: CustomItem(),
+              ));
         },
         itemCount: 10,
       ),
