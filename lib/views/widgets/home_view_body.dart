@@ -1,3 +1,4 @@
+import 'package:adaptive_layout_practice/views/widgets/custom_list.dart';
 import 'package:adaptive_layout_practice/views/widgets/custom_list_view.dart';
 import 'package:adaptive_layout_practice/views/widgets/custom_sliver_grid.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
               builder: (context , constrains) {
                 print(constrains.maxWidth);
                 if(constrains.maxWidth > 600){
-                  return const Text('Tablet Layout');
+                  return const CustomList();
                 }
                 return const CustomSliverGrid();
               }
