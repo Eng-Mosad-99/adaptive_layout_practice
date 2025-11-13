@@ -1,3 +1,4 @@
+import 'package:adaptive_layout_practice/views/widgets/custom_desktop_widget.dart';
 import 'package:adaptive_layout_practice/views/widgets/custom_drawer.dart';
 import 'package:adaptive_layout_practice/views/widgets/tablet_layout.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +10,16 @@ class DesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
       children: <Widget>[
-        CustomDrawer(),
-        Expanded(child: TabletLayout()),
+        Expanded(
+          child: CustomDrawer(),
+        ),
+        Expanded(
+          flex: 3,
+          child: TabletLayout(),
+        ),
+        Expanded(
+          child: CustomDesktopWidget(),
+        ),
       ],
     );
   }
