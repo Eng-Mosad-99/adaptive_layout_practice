@@ -11,7 +11,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
@@ -19,19 +19,53 @@ final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
       key: scaffoldKey,
       backgroundColor: const Color(0xffDBDBDB),
       drawer: const CustomDrawer(),
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        leading: GestureDetector(
-          onTap: (){
-            scaffoldKey.currentState!.openDrawer();
-          },
-          child: const Icon(
-            Icons.menu,
-            color: Colors.white,
-          ),
-        ),
-      ),
-      body:const HomeViewBody(),
+      appBar: buildAppBar(context),
+      body: const HomeViewBody(),
     );
   }
+
+  AppBar? buildAppBar(BuildContext context) {
+    return MediaQuery.of(context).size.width-32 > 900
+        ? null
+        : AppBar(
+            backgroundColor: Colors.black,
+            leading: GestureDetector(
+              child: const Icon(
+                Icons.menu,
+                color: Colors.white,
+              ),
+            ),
+          );
+  }
 }
+
+// class CustomAdaptiveAppBar extends StatelessWidget
+//     implements PreferredSizeWidget {
+//   const CustomAdaptiveAppBar({super.key, this.onTap});
+//   final void Function()? onTap;
+//   @override
+//   Widget build(BuildContext context) {
+//     return LayoutBuilder(
+//       builder: (context, constrains) {
+//         if (constrains.maxWidth < 900) {
+//           return AppBar(
+//             backgroundColor: Colors.black,
+//             leading: GestureDetector(
+//               onTap: onTap,
+//               child: const Icon(
+//                 Icons.menu,
+//                 color: Colors.white,
+//               ),
+//             ),
+//           );
+//         } else {
+//           return const SizedBox.shrink();
+//         }
+//       },
+//     );
+//   }
+
+//   @override
+//   // TODO: implement preferredSize
+//   Size get preferredSize => const Size.fromHeight(56);
+// }
