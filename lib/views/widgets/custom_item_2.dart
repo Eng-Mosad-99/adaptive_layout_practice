@@ -8,7 +8,7 @@ class CustomItem2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 65,
+      height: 75,
       decoration: BoxDecoration(
         color:  const Color(0xffECECEC),
         borderRadius: BorderRadius.circular(8),
