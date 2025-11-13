@@ -15,7 +15,7 @@ class CustomSliverListView extends StatelessWidget {
           child: CustomItem2(),
         );
       },
-      itemCount: 4,
+      itemCount: 10,
     );
   }
 }

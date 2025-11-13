@@ -10,9 +10,15 @@ class CustomDesktopWidget extends StatelessWidget {
     return const Column(
       children: [
         Expanded(
+          flex: 2,
           child: CustomItem(),
         ),
-        Expanded(child: CustomItem2()),
+        SizedBox(
+          height: 16,
+        ),
+        Expanded(
+          child: CustomItem2(),
+        ),
       ],
     );
   }
